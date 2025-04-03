@@ -5,9 +5,11 @@ import uvicorn
 app = FastAPI(title="Simple POST API")
 
 @app.get("/")
+@app.head("/")
 async def root_get():
     """
     Einfacher Endpunkt zum Testen, ob die API läuft.
+    Unterstützt sowohl GET als auch HEAD Anfragen.
     """
     return {"status": "running", "message": "API läuft. Verwende POST, um Daten zu senden."}
 
